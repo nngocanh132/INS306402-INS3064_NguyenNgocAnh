@@ -1,0 +1,28 @@
+Boss Fight: SQL vs NoSQL Decision
+Scenario 1: High-velocity social media feed
+
+Recommended model: NoSQL
+
+A high-velocity social media feed requires handling massive volumes of rapidly generated data, such as posts, likes, comments, and activity logs. A NoSQL database is more suitable for this scenario for several reasons.
+
+First, NoSQL systems provide strong horizontal scalability. Social media platforms often experience unpredictable traffic spikes, and NoSQL databases can scale across many distributed servers to handle this load efficiently.
+
+Second, NoSQL databases support schema flexibility. Social media data structures evolve frequently, for example when adding new reaction types, media formats, or metadata. A flexible schema allows developers to adapt the system without costly schema migrations.
+
+Third, NoSQL databases are optimized for high-throughput write operations. Social media feeds require extremely fast insertion of new content and real-time updates. Document or key-value databases handle these workloads efficiently.
+
+Although NoSQL systems typically sacrifice strict ACID guarantees for availability and scalability, this trade-off is acceptable for social media feeds where eventual consistency is often sufficient.
+- 
+Scenario 2: Secure bank ledger
+
+Recommended model: SQL
+
+A secure bank ledger requires strict accuracy, consistency, and reliability. Therefore, a relational SQL database is the most appropriate choice.
+
+First, SQL databases provide strong ACID properties (Atomicity, Consistency, Isolation, Durability). Financial transactions must be processed reliably so that money is neither lost nor duplicated during system failures or concurrent transactions.
+
+Second, relational databases enforce strict schemas and constraints. This ensures data integrity through foreign keys, constraints, and well-defined relationships between accounts, transactions, and balances.
+
+Third, SQL systems are optimized for transactional consistency and auditing. Financial systems must maintain precise transaction records and support rollback, logging, and compliance requirements.
+
+Finally, while SQL databases primarily scale vertically, they still support replication and clustering. However, the priority in banking systems is correctness and reliability rather than extreme horizontal scalability.
